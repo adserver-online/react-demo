@@ -1,0 +1,79 @@
+# Adserver.Online React Integration Demo
+
+> React demo application showcasing Adserver.Online SaaS ad server integration
+
+## Project Type
+React Single Page Application (SPA) with Vite build system
+
+## Development Commands
+- `npm install` - Install dependencies
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## Architecture
+
+### Core Components
+- **AdserverOnline** (`src/components/AdserverOnline.jsx`) - Context provider managing ad script loading
+- **AsoZone** (`src/components/AsoZone.jsx`) - Ad zone component with unique ID generation
+- **Header** (`src/components/Header.jsx`) - Navigation header with mobile menu
+- **Sidebar** (`src/components/Sidebar.jsx`) - Responsive sidebar navigation with ad zone
+- **Footer** (`src/components/Footer.jsx`) - Simple footer component
+
+### Pages
+- **Home** (`src/pages/Home.jsx`) - Landing page with top banner
+- **About** (`src/pages/About.jsx`) - About page with company information
+
+### Layout Structure
+- Flexbox-based responsive design with Tailwind CSS
+- Mobile-first approach with hamburger menu
+- Fixed sidebar (320px) on desktop, slide-out on mobile
+
+## Ad Integration System
+
+### Script Loading
+- External script: `https://media.aso1.net/js/code.min.js` (configurable domain)
+- React Context pattern for state management
+- Graceful error handling and loading states
+
+### Ad Zones
+- **Page Banners**: Zone ID configurable, 728x90px, `reloadOnNavigation={false}`
+- **Sidebar Ads**: Zone ID configurable, 240x400px, persistent across navigation
+- Unique element ID generation prevents conflicts
+- Empty ad callback support with "No ad" fallback
+
+### Key Features
+- Dynamic ad loading without page refresh
+- Navigation-aware reload behavior
+- Duplicate loading prevention
+- Responsive design with layout shift prevention
+- PropTypes validation and React.memo optimization
+
+## Tech Stack
+- React 19.1.0 with Vite
+- React Router DOM for routing
+- Tailwind CSS v3.4.17 for styling
+- PropTypes for type checking
+
+## File Structure
+```
+src/
+├── components/
+│   ├── AdserverOnline.jsx # Context provider & script loader
+│   ├── AsoZone.jsx        # Ad zone component
+│   ├── Header.jsx         # Navigation header
+│   ├── Sidebar.jsx        # Responsive sidebar
+│   └── Footer.jsx         # Footer component
+├── pages/
+│   ├── Home.jsx          # Landing page
+│   └── About.jsx         # About page
+├── App.jsx               # Main app component
+└── main.jsx              # Entry point
+```
+
+## Development Notes
+- All components use React.memo for performance
+- Mobile-responsive with burger menu animation
+- Accessibility features with ARIA labels
+- Clean code with ESLint configuration
