@@ -2,7 +2,7 @@
 
 A React demo application showcasing how to integrate [Adserver.Online](https://adserver.online) SaaS ad server into modern web applications.
 
-[Live demo](https://adserver.online/demost/react/)
+[Live demo](https://adserver-online.github.io/react-demo)
 
 ## Quick Start
 
