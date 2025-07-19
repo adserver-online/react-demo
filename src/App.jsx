@@ -13,7 +13,7 @@ function App() {
 
   return (
     <AdserverOnline>
-      <Router basename={import.meta.env.PROD ? '/demost/react/' : '/'}>
+      <Router basename={import.meta.env.PROD ? '/react-demo' : '/'}>
         <div className="min-h-screen flex flex-col">
           <Header
             isMobileMenuOpen={isMobileMenuOpen}
